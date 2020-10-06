@@ -1,4 +1,8 @@
+import 'package:Destini/story_brain.dart';
 import 'package:flutter/material.dart';
+import 'story_brain.dart';
+
+StoryBrain brain = StoryBrain();
 
 void main() {
   runApp(App());
@@ -44,24 +48,28 @@ class _StoryPageState extends State<StoryPage> {
       children: [
         Expanded(
           flex: 5,
-          child: Center(
-            child: Text(
-              'Story text will go here.',
-              style: TextStyle(
-                fontSize: 24.0,
-                color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: Text(
+                brain.getStory(),
+                // textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(8.0),
             child: FlatButton(
               onPressed: () {},
               color: Colors.red,
               child: Text(
-                'Choice 1',
+                brain.getChoice1(),
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
@@ -73,12 +81,12 @@ class _StoryPageState extends State<StoryPage> {
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(8.0),
             child: FlatButton(
               onPressed: () {},
               color: Colors.blue,
               child: Text(
-                'Choice 2',
+                brain.getChoice2(),
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
