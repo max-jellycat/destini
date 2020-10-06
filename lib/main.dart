@@ -66,7 +66,9 @@ class _StoryPageState extends State<StoryPage> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () => {
+                setState(() => brain.nextStory(1)),
+              },
               color: Colors.red,
               child: Text(
                 brain.getChoice1(),
@@ -82,15 +84,20 @@ class _StoryPageState extends State<StoryPage> {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: FlatButton(
-              onPressed: () {},
-              color: Colors.blue,
-              child: Text(
-                brain.getChoice2(),
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+            child: Visibility(
+              visible: brain.buttonShouldBeVisible(),
+              child: FlatButton(
+                onPressed: () => {
+                  setState(() => brain.nextStory(2)),
+                },
+                color: Colors.blue,
+                child: Text(
+                  brain.getChoice2(),
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
