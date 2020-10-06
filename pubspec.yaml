@@ -60,8 +60,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Peddana
+    - family: RobotoSlab
       fonts:
-        - asset: fonts/Peddana-Regular.ttf
+        - asset: fonts/RobotoSlab-Regular.ttf
+        - asset: fonts/RobotoSlab-Bold.ttf
+          weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
